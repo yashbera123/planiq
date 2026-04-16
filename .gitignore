@@ -1,0 +1,37 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+*.egg-info/
+.eggs/
+dist/
+build/
+*.pkl
+*.pyc
+
+# Node
+node_modules/
+dist/
+.cache/
+
+# Env files (secrets)
+.env.local
+.env
+.env.*.local
+
+# Logs
+*.jsonl
+feedback_log.jsonl
+history_log.jsonl
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user

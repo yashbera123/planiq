@@ -1,0 +1,32 @@
+# ═══════════════════════════════════════════════════════════════════════
+#  PlanIQ — Backend Requirements  (FIXED v4.0)
+#
+#  WHY THESE VERSIONS (forensic analysis of model.pkl / scaler.pkl):
+#
+#    sklearn_version embedded : 1.8.0
+#    numpy._core present      : True   ← NumPy 2.x ONLY module
+#    numpy.core present       : False  ← NOT NumPy 1.x
+#    sklearn._loss present    : True   ← sklearn ≥ 1.1 internal
+#    pickle protocol          : 5
+#
+#  ERRORS the old requirements.txt caused:
+#    "No module named 'numpy._core'"  → numpy==1.26.3 is 1.x; need 2.x
+#    "No module named '_loss'"        → sklearn==1.4.0 ≠ pkl's 1.8.0
+#    "numpy.dtype size changed"       → binary mismatch 1.x vs 2.x
+#
+#  INSTALL (Windows):
+#    cd backend
+#    python -m venv venv
+#    venv\Scripts\activate
+#    python -m pip install --upgrade pip
+#    pip install -r requirements.txt
+#    python app.py
+# ═══════════════════════════════════════════════════════════════════════
+
+numpy==2.2.4
+scikit-learn==1.8.0
+joblib==1.4.2
+pandas==2.2.3
+flask==3.1.0
+flask-cors==5.0.1
+gunicorn==23.0.0

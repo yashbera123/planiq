@@ -1,0 +1,282 @@
+[
+ 
+  {
+    "provider": "Jio",
+    "price": 179,
+    "data_per_day": 1,
+    "validity_days": 28,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["JioTV", "JioCinema"],
+    "category": "Budget",
+    "5g": true
+  },
+  {
+    "provider": "Jio",
+    "price": 239,
+    "data_per_day": 1.5,
+    "validity_days": 28,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["JioTV", "JioCinema"],
+    "category": "Popular",
+    "5g": true
+  },
+  {
+    "provider": "Jio",
+    "price": 299,
+    "data_per_day": 1.5,
+    "validity_days": 28,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["JioTV", "JioCinema", "Unlimited 5G"],
+    "category": "Popular",
+    "5g": true
+  },
+  {
+    "provider": "Jio",
+    "price": 349,
+    "data_per_day": 2,
+    "validity_days": 28,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["JioTV", "JioCinema", "Unlimited 5G"],
+    "category": "Best Seller",
+    "5g": true
+  },
+  {
+    "provider": "Jio",
+    "price": 399,
+    "data_per_day": 2.5,
+    "validity_days": 28,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["JioCinema Premium", "Unlimited 5G"],
+    "category": "Entertainment",
+    "5g": true
+  },
+  {
+    "provider": "Jio",
+    "price": 666,
+    "data_per_day": 1.5,
+    "validity_days": 84,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["JioTV", "JioCinema", "Unlimited 5G"],
+    "category": "Long-Term",
+    "5g": true
+  },
+  {
+    "provider": "Jio",
+    "price": 949,
+    "data_per_day": 2,
+    "validity_days": 84,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["JioHotstar", "Unlimited 5G"],
+    "category": "Entertainment",
+    "5g": true
+  },
+  {
+    "provider": "Jio",
+    "price": 1299,
+    "data_per_day": 2,
+    "validity_days": 84,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["Netflix Mobile", "JioCinema"],
+    "category": "Premium OTT",
+    "5g": true
+  },
+  {
+    "provider": "Jio",
+    "price": 1799,
+    "data_per_day": 3,
+    "validity_days": 84,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["Netflix Basic", "JioTV", "JioCinema"],
+    "category": "Premium OTT",
+    "5g": true
+  },
+  {
+    "provider": "Jio",
+    "price": 3599,
+    "data_per_day": 2.5,
+    "validity_days": 365,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["JioTV", "JioCinema", "Unlimited 5G"],
+    "category": "Annual",
+    "5g": true
+  },
+
+
+  {
+    "provider": "Airtel",
+    "price": 199,
+    "data_per_day": 1,
+    "validity_days": 28,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["Airtel Thanks"],
+    "category": "Budget",
+    "5g": true
+  },
+  {
+    "provider": "Airtel",
+    "price": 269,
+    "data_per_day": 1,
+    "validity_days": 28,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["Airtel Thanks", "Unlimited 5G"],
+    "category": "Popular",
+    "5g": true
+  },
+  {
+    "provider": "Airtel",
+    "price": 299,
+    "data_per_day": 1.5,
+    "validity_days": 28,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["Airtel Thanks", "Unlimited 5G"],
+    "category": "Popular",
+    "5g": true
+  },
+  {
+    "provider": "Airtel",
+    "price": 349,
+    "data_per_day": 2,
+    "validity_days": 28,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["Airtel Thanks", "Unlimited 5G"],
+    "category": "Best Seller",
+    "5g": true
+  },
+  {
+    "provider": "Airtel",
+    "price": 399,
+    "data_per_day": 2.5,
+    "validity_days": 28,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["Airtel Xstream", "Unlimited 5G"],
+    "category": "Entertainment",
+    "5g": true
+  },
+  {
+    "provider": "Airtel",
+    "price": 839,
+    "data_per_day": 2,
+    "validity_days": 84,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["Airtel Xstream", "Unlimited 5G"],
+    "category": "Long-Term",
+    "5g": true
+  },
+  {
+    "provider": "Airtel",
+    "price": 1798,
+    "data_per_day": 3,
+    "validity_days": 84,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["Netflix Basic", "Airtel Xstream"],
+    "category": "Premium OTT",
+    "5g": true
+  },
+  {
+    "provider": "Airtel",
+    "price": 3999,
+    "data_per_day": 2.5,
+    "validity_days": 365,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["Disney+ Hotstar", "Unlimited 5G"],
+    "category": "Annual Premium",
+    "5g": true
+  },
+
+
+  {
+    "provider": "VI",
+    "price": 199,
+    "data_per_day": 1,
+    "validity_days": 28,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["Vi Movies & TV"],
+    "category": "Budget",
+    "5g": false
+  },
+  {
+    "provider": "VI",
+    "price": 249,
+    "data_per_day": 1,
+    "validity_days": 28,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["Weekend Data Rollover"],
+    "category": "Popular",
+    "5g": false
+  },
+  {
+    "provider": "VI",
+    "price": 299,
+    "data_per_day": 1.5,
+    "validity_days": 28,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["Weekend Data Rollover", "Binge All Night"],
+    "category": "Popular",
+    "5g": false
+  },
+  {
+    "provider": "VI",
+    "price": 349,
+    "data_per_day": 2,
+    "validity_days": 28,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["Weekend Data Rollover", "Binge All Night"],
+    "category": "Best Seller",
+    "5g": false
+  },
+  {
+    "provider": "VI",
+    "price": 719,
+    "data_per_day": 1.5,
+    "validity_days": 84,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["Weekend Data Rollover"],
+    "category": "Long-Term",
+    "5g": false
+  },
+  {
+    "provider": "VI",
+    "price": 859,
+    "data_per_day": 2,
+    "validity_days": 84,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["Weekend Data Rollover", "Binge All Night"],
+    "category": "Long-Term",
+    "5g": false
+  },
+  {
+    "provider": "VI",
+    "price": 3499,
+    "data_per_day": 1.5,
+    "validity_days": 365,
+    "calls": "Unlimited",
+    "sms_per_day": 100,
+    "benefits": ["Weekend Data Rollover", "Extra 50GB"],
+    "category": "Annual",
+    "5g": false
+  }
+]

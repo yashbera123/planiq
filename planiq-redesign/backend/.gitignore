@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+feedback_log.jsonl
+history_log.jsonl
+.env

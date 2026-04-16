@@ -1,0 +1,11 @@
+{
+  "version": "2.0",
+  "algorithm": "GradientBoostingClassifier",
+  "label_method": "KMeans(k=6) clustering \u2192 usage-ordered plan tiers",
+  "dataset": "Telco Customer Churn (IBM/Kaggle)",
+  "dataset_rows": 7043,
+  "features": 14,
+  "accuracy": 0.9844,
+  "trained_at": "2026-04-11T18:47:16.449265",
+  "feedback_count": 0
+}
