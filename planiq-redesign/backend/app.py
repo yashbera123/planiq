@@ -29,19 +29,41 @@ CORS(app)
 BASE = Path(__file__).parent
 
 # ── Load artifacts ─────────────────────────────────────────────────────
-model    = pickle.load(open(BASE / "model.pkl",   "rb"))
-scaler   = pickle.load(open(BASE / "scaler.pkl",  "rb"))
-features = json.load(open(BASE / "features.json"))
-feat_imp = json.load(open(BASE / "feature_importance.json"))
+model = None
+scaler = None
+features = []
+feat_imp = {}
+
+def load_model():
+    global model, scaler, features, feat_imp
+    if model is None:
+        try:
+            print("🔄 Loading ML model...")
+            model = pickle.load(open(BASE / "model.pkl", "rb"))
+            scaler = pickle.load(open(BASE / "scaler.pkl", "rb"))
+            features = json.load(open(BASE / "features.json"))
+            feat_imp = json.load(open(BASE / "feature_importance.json"))
+            print("✅ Model loaded successfully")
+        except Exception as e:
+            print("❌ Model load failed:", e)
+            model = None
 
 # ── Load telecom full dataset (SINGLE source of truth) ──────────────────
 _ds_path = BASE / "telecom_plans_full_dataset.json"
-if _ds_path.exists():
-    _raw_dataset = json.load(open(_ds_path))
-else:
-    _raw_dataset = []
-    print("⚠️  telecom_plans_full_dataset.json not found — no plans loaded!")
 
+dataset_loaded = False
+
+try:
+    if _ds_path.exists():
+        _raw_dataset = json.load(open(_ds_path))
+        dataset_loaded = True
+        print(f"✅ Dataset loaded: {len(_raw_dataset)} plans")
+    else:
+        print("⚠️ Dataset file not found")
+        _raw_dataset = []
+except Exception as e:
+    print("❌ Dataset load failed:", e)
+    _raw_dataset = []
 # Enrich each plan with computed fields
 TELECOM_DATASET = []
 for i, p in enumerate(_raw_dataset):
@@ -187,11 +209,26 @@ def _build_row(body):
     return row
 
 def _run_model(row):
-    df    = pd.DataFrame([row], columns=features)
-    Xs    = scaler.transform(df)
-    pid   = str(model.predict(Xs)[0])
+    load_model()
+
+    if model is None or scaler is None:
+        raise Exception("Model not available")
+
+    df = pd.DataFrame([row], columns=features)
+    Xs = scaler.transform(df)
+    pid = str(model.predict(Xs)[0])
     proba = model.predict_proba(Xs)[0]
     return pid, proba, Xs
+
+def fallback_plan():
+    return {
+        "plan_id": "1",
+        "name": "Fallback Plan",
+        "price": 199,
+        "data_gb": 28,
+        "confidence": 50,
+        "reason": "Fallback recommendation (ML unavailable)"
+    }
 
 def _compute_xai(row, Xs):
     vals   = Xs[0]
@@ -378,7 +415,8 @@ def health():
         "accuracy": model_version.get("accuracy"),
         "trained_at": model_version.get("trained_at"),
         "feedback_count": _count_feedback(),
-        "n_features": len(features),
+        "model_loaded": model is not None,
+"n_features": len(features) if features else 0,
         "v4_endpoints": ["/recommend","/compare","/insights","/history","/plan-profiles"],
     })
 
@@ -436,7 +474,14 @@ def predict():
     try:
         body = request.get_json(force=True, silent=True) or {}
         row  = _build_row(body)
-        pid, proba, Xs = _run_model(row)
+        try:
+            pid, proba, Xs = _run_model(row)
+        except Exception as e:
+            print("❌ Model prediction failed:", e)
+            return jsonify({
+                "error": "Model unavailable",
+                "fallback": fallback_plan()
+            }), 503
         plan = plans[pid]
         mc   = row["monthly_charges"]
         xai  = _compute_xai(row, Xs)
