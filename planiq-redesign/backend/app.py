@@ -991,12 +991,17 @@ def why_not():
         import traceback
         return jsonify({"error": str(e), "trace": traceback.format_exc()}), 500
 
+# --- KEEP ALL YOUR EXISTING IMPORTS AND CODE SAME ABOVE ---
+
+# 👇 ONLY REPLACE THE LAST BLOCK WITH THIS
 
 if __name__ == "__main__":
-    print(">> PlanIQ API v5.0 -- http://127.0.0.1:5000")
+    print(">> PlanIQ API v5.0 -- Production Mode")
     print(f"   Model    : {model_version.get('algorithm')} v{model_version.get('version')}")
     print(f"   Accuracy : {model_version.get('accuracy',0)*100:.1f}%")
     print(f"   Dataset  : {len(TELECOM_DATASET)} plans loaded")
     print(f"   Endpoints: /predict /recommend /compare /insights /feedback /history /plan-profiles")
     print(f"   New v5   : /scenario /custom-plan /why-not /detect-provider")
-    app.run(debug=True, port=5000, host="127.0.0.1")
+
+    # 🔥 IMPORTANT CHANGE FOR DEPLOYMENT
+    app.run(host="0.0.0.0", port=5000)
