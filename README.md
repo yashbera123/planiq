@@ -2,8 +2,7 @@
 
 **Smart, explainable AI recommendations for telecom recharge plans**
 
-🔗 **Live Demo:** https://your-vercel-link
-📄 **Detailed Report:** [View PDF](./README.md.pdf)
+🔗 **Live Demo:** https://planiq-seven.vercel.app
 
 ---
 
